@@ -117,7 +117,9 @@ Commands that you need to type in are in fixed-width font.
 
 Begin by typing:
 
-    workon cv3<enter>
+    workon cv3
+
+And then run the command by pressing the `Enter` (or `Return`) key.
 
 This configures the environment for running OpenCV3 and Python3
 libraries and shared files.
@@ -127,6 +129,8 @@ While you edit the code with Geany, you *run* the code in
 type the following into the **Terminal**:
 
     python test_image.py
+
+And again, run this command by pressing the `Enter` (or `Return`) key.
 
 (A shortcut is to use the `Tab` key to complete what you start to
 type. For instance, if you type `py` and then press the `Tab` key, it
