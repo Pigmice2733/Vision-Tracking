@@ -2,8 +2,9 @@ Vision Tracking Project
 ========================
 
 This project currently includes everything you need to get started
-with *vision tracking* on a Raspberry Pi computer with a direct-port
-[camera module][1].
+with *vision tracking* on a [Raspberry Pi computer][1] with a direct-port
+[camera module][2].
+
 
 Project Contents
 ----------------
@@ -37,7 +38,7 @@ algorithm or filter provided by the OpenCV library correctly is
 challenging in itself.
 
   * `test_image.py`: demonstrates grabbing an image from the camera
-    and showing it on the debug window
+    and showing it on the debug window.
 
   * `test_video.py`: demonstrates getting a video stream into your
     code as a stream of images that you can process.  Display live
@@ -46,13 +47,13 @@ challenging in itself.
   * `object_movement.py`: demonstrates how to track a single color
     object (green in my sample), illustrates the creation of mask for
     the color green, finding the contours and the center of what is
-    being tracked
+    being tracked.
 
   * `bunny_track.py`: demonstrates how to track of an arbitrary
-    object.  In this example, you will need to press ‘i’, then select
+    object.  In this example, you will need to press `i`, then select
     (by mouse clicking) four corners of what you need to track from
     the still image, then hit any key after that to start tracking
-    what you selected
+    what you selected.
 
   * `edges.py`: this one was inspired by Ron’s suggestion Tuesday that
     it would be good to track bumpers of other robots, possibly to
@@ -61,7 +62,7 @@ challenging in itself.
     classic edge detection algorithm called Canny edge detector, which
     does not rely on color or shapes of objects in an image.  Canny
     detector has always been my goto algorithm of all sorts of
-    different things in the past. (edited)
+    different things in the past.
 
 
 Requirements
@@ -69,14 +70,16 @@ Requirements
 
 For this project, you will need the following:
 
-  * Raspberry Pi
-  * [Camera Module][1]
-  * 2.1 Amp USB power adapter with a Micro
-  * MicroSD memory with at least 16Gb size (64Gb is preferable)
+  * [Raspberry Pi][b1]
+  * [Camera Module][b2]
+  * [2.1 Amp USB power adapter][b4] with a MicroUSB plug
+  * [MicroSD memory][b3] with at least 16Gb size (64Gb is preferable)
   * HDMI monitor and cable or a VGA monitor with a VGA-to-HDMI converter cable
   * Keyboard and mouse
 
-These can all be purchased on Amazon and [other locations](http://www.mcmelectronics.com/product/RASPBERRY-PI-83-16566RK-/83-16566RK).
+If you would like one of these at home, they can all be purchased on
+Amazon and [other locations][b5].
+
 
 Creating a RPi Image
 --------------------
@@ -88,7 +91,7 @@ boot OS image and using the sample code.
   https://sourceforge.net/projects/win32diskimager/
 
 * Get the Pi image for vision tracking from this location and save it your PC
-  https://github.com/Pigmice2733/Vision-Tracking/tree/master/rpi3_images/vision_tracking.img
+  `https://github.com/Pigmice2733/Vision-Tracking/tree/master/rpi3_images/vision_tracking.img`
 
 * Format and insert a 32GB or larger SD card into your laptop.
 
@@ -96,7 +99,51 @@ boot OS image and using the sample code.
 
 * Browse to the location of the Pi image file that you downloaded from Pigmice GitHub.
 
-* Follow these steps (Page 2 of this document) to create a bootable SD using the Pi image
+* Follow these steps to create a bootable SD using the Pi image:
+  ![screen-shot](http://i.imgur.com/nThuBNI.png)
+
+* After the Pi desktop has booted up, run Geany.  Geany is an editor that
+  works great for writing Python code.  You should see all the samples we've
+  developed. You can [download Geany][3] for your computer.
 
 
-  [1]: https://www.raspberrypi.org/products/camera-module/
+Running the Samples
+-------------------
+
+To run the example, go into **Terminal** (This is the command-prompt),
+by clicking on the black square icon on the top bar in Pi desktop.
+
+Commands that you need to type in are in fixed-width font.
+
+Begin by typing:
+
+    workon cv3<enter>
+
+This configures the environment for running OpenCV3 and Python3
+libraries and shared files.
+
+While you edit the code with Geany, you *run* the code in
+**Terminal**. For instance, to run the `test_image` code, you would
+type the following into the **Terminal**:
+
+    python test_image.py
+
+(A shortcut is to use the `Tab` key to complete what you start to
+type. For instance, if you type `py` and then press the `Tab` key, it
+will expand it to `python`. This technique works for code too, for
+when you type `tes` and press `Tab`, it will expand it to `test_`. It
+won't expand it to `test_image.py` because there are multiple files
+that begin with `test_`, so at this point, you could type an `i`, and
+then when you press `Tab`, it will expand it to the full
+filename. (You may have to play around with this for a bit.)
+
+
+
+  [1]: http://www.raspberrypi.org
+  [2]: https://www.raspberrypi.org/products/camera-module/
+  [3]: https://www.geany.org/Download/Releases#windowsBinaries
+  [b1]: https://www.amazon.com/Raspberry-Pi-RASP-PI-3-Model-Motherboard/dp/B01CD5VC92
+  [b2]: https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS
+  [b3]: https://www.amazon.com/dp/B010Q588D4
+  [b4]: https://www.amazon.com/Smraza-Starter-Raspberry-Supply-Heatsinks/dp/B01I1OESI6
+  [b5]: http://www.mcmelectronics.com/product/RASPBERRY-PI-83-16566RK-/83-16566RK
